@@ -1,5 +1,6 @@
 @echo off
-title Batchnet By Victor Wolmarans: loading website
+mode con:cols=60 lines=20
+title The Batch Network by vicwolrocket: loading website
 echo %1>goto_page.txt
-start goto_page_true.exe
+goto_page_true.exe
 exit
