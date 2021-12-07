@@ -1,4 +1,5 @@
 @echo off
+cls
 color 97
 title Batchnet By Victor Wolmarans: loading website
 for /f "Delims=" %%a in (goto_page.txt) do (
@@ -6,7 +7,7 @@ for /f "Delims=" %%a in (goto_page.txt) do (
 set link=%%a
 
 )
-
+del /q website
 type logo.txt
 echo.
 echo Going To %link%
@@ -47,8 +48,10 @@ color 0f
 cls
 color 0F
 title %link%
-mode con:cols=100 lines=25
-page.bat
 cd..
-start main.bat
-:exit
+start select.vbs
+cd website
+start page.bat
+::cd..
+::start main.bat
+::exit

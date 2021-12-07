@@ -1,8 +1,11 @@
 @echo off
 color 70
 title The Batch Network By vicwolrocket
+::accounts.exe
+mode con:cols=70 lines=30
 
 :menu
+cls
 type logo.txt
 echo.
 echo.
@@ -10,12 +13,13 @@ echo.
 echo Welcome To The Batchnet!
 echo What do you want to do?
 echo 1. Go to a website
-echo 2. Clear downloads
+echo 2. BatchNet games
 echo 3. Commands
 set /p choice=-
 if %choice%==1 goto website
-if %choice%==2 goto downloads
+if %choice%==2 goto games
 if %choice%==3 goto cmds
+goto menu
 
 :website
 cls
@@ -29,14 +33,9 @@ echo ERROR>page.bat
 call goto_page.bat %page%
 
 
-:downloads
-cd website
-del /Q downloads
-cls
-echo Downloads cleared! :)
-echo.
-cd..
-goto menu
+:games
+cd Website
+call goto_page https://pastebin.com/raw/FYFGf7EF
 
 
 :cmds
